@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4f8" />
+  <title>To My Favorite Person ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-orbs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+
+  <button class="music-toggle glass-mini" id="musicToggle" type="button" aria-label="تشغيل الموسيقى">♫ <span>موسيقى</span></button>
+  <audio id="bgMusic" loop preload="none">
+    <!-- حط ملف mp3 بتاعك هنا باسم birthday-song.mp3 -->
+    <source src="" type="audio/mpeg">
+  </audio>
+
+  <main id="app">
+    <section class="screen active" id="loveStep">
+      <div class="glass-card question-card">
+        <div class="tiny-label">23 • 09 • 2026</div>
+        <div class="heart-mark">♡</div>
+        <p class="eyebrow">قبل ما نبدأ...</p>
+        <h1>بتحبيني؟</h1>
+        <p class="subtext">سؤال بسيط جدًا... بس خلي بالك من إجابتك 😌</p>
+        <div class="choice-area" id="choiceArea">
+          <button class="btn btn-primary" id="loveBtn">بحبك أوي ❤️</button>
+          <button class="btn btn-runaway" id="noBtn">لأ 😏</button>
+        </div>
+        <p class="hint" id="escapeHint">حاولي تدوسي على «لأ» لو تقدري 👀</p>
+      </div>
+    </section>
+
+    <section class="screen" id="passwordStep">
+      <div class="glass-card password-card">
+        <div class="lock-icon">🔐</div>
+        <p class="eyebrow">أهو بدأ الجد بقى...</p>
+        <h2>إثبتي إنك نونة بقى 👀</h2>
+        <p class="subtext">الباسورد هو تاريخ مميز بينا، ومش أي تاريخ 😉</p>
+        <div class="password-wrap">
+          <input id="passwordInput" type="password" inputmode="numeric" maxlength="12" placeholder="اكتبي التاريخ هنا" autocomplete="off" />
+          <button id="togglePassword" class="mini-btn" type="button" aria-label="إظهار الباسورد">👁</button>
+        </div>
+        <button class="btn btn-primary full" id="unlockBtn">دخول لعالمنا ✨</button>
+        <p class="error" id="passwordError"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="mainStep">
+      <div class="main-shell">
+        <header class="hero glass-card" id="topHero">
+          <div class="hero-topline">
+            <span class="hero-date">23 / 09 / 2026</span>
+            <span class="mini-badge">CHAPTER 20</span>
+          </div>
+          <div class="hero-sparkles">✦ ✧ ✦</div>
+          <p class="eyebrow">For the girl who makes ordinary days feel special</p>
+          <h2>Happy 20th<br><span>Birthday, Nona ♡</span></h2>
+          <p class="hero-copy">عملتلك المكان الصغير ده عشان يومك الكبير يستاهل حاجة معمولة مخصوص ليكي.</p>
+          <div class="hero-actions">
+            <button class="scroll-cue" id="startJourney">ابدئي الرحلة ↓</button>
+            <button class="scroll-cue ghost" id="surpriseBtn">مفاجأة صغيرة ✨</button>
+          </div>
+          <div class="scroll-progress" aria-hidden="true"><span id="pageProgress"></span></div>
+        </header>
+
+        <section class="story-section">
+          <div class="section-heading">
+            <span>01</span>
+            <h3>رسالة صغيرة قبل الحكاية</h3>
+            <p>الموقع ده مش معمول عشان يبقى جميل بس... معمول عشان يبقى شبك.</p>
+          </div>
+          <div class="letter-reveal glass-card">
+            <div class="seal">♡</div>
+            <p id="typewriterText">في تفاصيل كتير في حياتي بقت مرتبطة بوجودك، حتى الحاجات العادية بقت أحلى لما تكوني جزء منها.</p>
+            <button class="text-link" id="revealLetterBtn">اقري سطر كمان ←</button>
+          </div>
+        </section>
+
+        <section class="story-section compact-section">
+          <div class="section-heading centered">
+            <span>02</span>
+            <h3>سنينك في أرقام ♡</h3>
+            <p>عشان العشرين تستاهل شوية أرقام لطيفة.</p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat glass-card"><strong>20</strong><span>سنة من الذكريات</span></div>
+            <div class="stat glass-card"><strong>∞</strong><span>لحظة نفسي أعيشها معاكي</span></div>
+            <div class="stat glass-card"><strong>1</strong><span>نونة واحدة وبس</span></div>
+            <div class="stat glass-card"><strong id="daysAlive">—</strong><span>يوم من عمرك تقريبًا</span></div>
+          </div>
+        </section>
+
+        <section class="story-section compact-section">
+          <div class="section-heading centered">
+            <span>03</span>
+            <h3>شريط حياتنا ♡</h3>
+            <p>من أول حكاية... لحد الصفحة اللي لسه بنكتبها سوا.</p>
+          </div>
+
+          <div class="life-line" id="lifeLine">
+            <div class="life-progress" id="lifeProgress"></div>
+            <article class="life-event"><div class="life-dot">01</div><div class="life-content glass-card"><span class="life-date">البداية</span><h4>أول مرة اتكلمنا</h4><p>يا مزاجك يا دود و انت داخل تسلم ع صحاب عمرك و انت اول مره تتعامل معاهم.</p></div></article>
+            <article class="life-event reverse"><div class="life-dot">02</div><div class="life-content glass-card"><span class="life-date">ذكرى</span><h4>أول حاجة خلتني أضحك</h4><p> م قادر انسي موقف اني دخلت سلمت ب ايدي و انا اول مره نتعامل سوي يوم في القلب زي ما انتي في القلب بالظبط .</p></div></article>
+            <article class="life-event"><div class="life-dot">03</div><div class="life-content glass-card"><span class="life-date">لحظة مهمة</span><h4>اليوم اللي بقينا فيه "إحنا"</h4><p>(يوم كانكا) يومها كنا مرحين سوي و انت بصراحه ادتني الدفعه ال خلتني اعترف ليك و بقينا احنا.</p></div></article>
+            <article class="life-event reverse"><div class="life-dot">04</div><div class="life-content glass-card"><span class="life-date">أجمل ذكرى</span><h4>يوم لسه عايش في دماغي</h4><p>لما كنا عند سوتر و الدنيا شتيت و اكيد الباقي معروف.</p></div></article>
+            <article class="life-event"><div class="life-dot">05</div><div class="life-content glass-card"><span class="life-date">23 • 09 • 2026</span><h4>النهارده... عيد ميلاد الـ 20 🎂</h4><p>فصل جديد من حياتك بدأ، وأنا سعيد إني موجود فيه معاكي.</p></div></article>
+            <article class="life-event reverse final-event"><div class="life-dot">∞</div><div class="life-content glass-card"><span class="life-date">المستقبل</span><h4>لسه الحكاية طويلة ❤️</h4><p>دي مش النهاية... دي مجرد النقطة اللي عندها قررنا نكمل نكتب سوا.</p></div></article>
+          </div>
+        </section>
+
+        <section class="gallery-section compact-section">
+          <div class="section-heading centered"><span>04</span><h3>ألبوم صغير لينا 📸</h3></div>
+          <div class="gallery-grid">
+            <button class="photo-card glass-card" data-img="img/1.jpg" data-caption="أجمل يوم من الأيام اللي أحب أفتكرها."><img src="img/1.jpg" alt="ذكرى 1"><span>01</span></button>
+            <button class="photo-card glass-card tall" data-img="img/2.jpg" data-caption="تفصيلة صغيرة بس مكانها كبير عندي."><img src="img/2.jpg" alt="ذكرى 2"><span>02</span></button>
+            <button class="photo-card glass-card" data-img="img/3.jpg" data-caption="وكل مرة أشوف الصورة دي بابتسم."><img src="img/3.jpg" alt="ذكرى 3"><span>03</span></button>
+            <button class="photo-card glass-card" data-img="img/4.jpg" data-caption="لسه فيه صور أكتر بكتير مستنيينها."><img src="img/4.jpg" alt="ذكرى 4"><span>04</span></button>
+          </div>
+        </section>
+
+        <section class="wish-section compact-section">
+          <div class="wish-card glass-card" id="wishCard">
+            <div class="cake">🎂</div>
+            <p class="eyebrow">MAKE A WISH</p>
+            <h3>اطفي الشمعة واحكي أمنية ✨</h3>
+            <p>اضغطي على الشمعة... وسيبي الأمنية لنفسك.</p>
+            <button class="candle" id="candleBtn" type="button"><span></span></button>
+            <p class="wish-hidden" id="wishHidden">أتمنى كل أمنياتك الصغيرة والكبيرة تتحقق، وأكون موجود أشوفك وإنتِ بتحققيها ❤️</p>
+          </div>
+        </section>
+
+        <section class="fun-section compact-section">
+          <div class="section-heading centered"><span>05</span><h3>اختبار نونة الرسمي 😂</h3><p>جاوبي سؤال سريع عشان تثبتي إنك نونة فعلًا.</p></div>
+          <div class="quiz-card glass-card">
+            <h4>مين المفروض يكسب في خناقة حب؟ 😌</h4>
+            <div class="quiz-options" id="quizOptions">
+              <button data-answer="a">أنا طبعًا 👑</button>
+              <button data-answer="b">أنتَ يا أدهم ❤️</button>
+              <button data-answer="c">الاتنين ونخلص 😂</button>
+            </div>
+            <p class="quiz-result" id="quizResult"></p>
+          </div>
+        </section>
+
+        <section class="letter glass-card final-letter">
+          <div class="letter-flower">✿</div>
+          <p class="eyebrow">FINAL CHAPTER</p>
+          <h3>وبما إنك وصلتي لهنا...</h3>
+          <p>كل سنة وإنتِ أجمل صدفة، وأحلى اختيار، والشخص اللي وجوده لوحده بيخلّي اليوم ألطف. العشرين مش مجرد رقم؛ دي بداية فصل جديد، وأنا أتمنى يكون مليان ضحك، نجاح، وأيام حلوة كتير.</p>
+          <p class="signature">— من أدهم، بحبك أوي ❤️</p>
+          <button class="btn btn-primary final-gift" id="finalGiftBtn">افتحي آخر مفاجأة 🎁</button>
+        </section>
+
+        <footer>Made with too much love ♡ • 23.09.2026</footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="photoModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-content glass-card"><button class="modal-close" id="modalClose">×</button><img id="modalImg" src="" alt=""><p id="modalCaption"></p></div>
+  </div>
+  <div class="final-popup" id="finalPopup" aria-hidden="true"><div class="final-popup-card glass-card"><div class="big-heart">♥</div><p class="eyebrow">ONE LAST THING...</p><h3>لو الزمن رجع بيا،<br>هختارك تاني. ❤️</h3><p>كل سنة وإنتِ نونتي، وكل سنة وأنا ممتن إن حكايتنا بقت جزء من حياتي.</p><button class="btn btn-primary" id="closeFinal">طب خلاص اقفلي بقى 😂</button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
